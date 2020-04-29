@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+        <title>Circuito por alfabeto</title>        
+        <script type="text/javascript">
+            function gerar(palavraDigitada, resultado){
+                if (palavraDigitada !== ""){
+                    var palavras = [
+                    {letra:"A", circuito: "10 Polichinelos"},
+                    {letra:"B", circuito: "Pular corda 10 vezes"},
+                    {letra:"C", circuito: "5 Abdominais"},
+                    {letra:"D", circuito: "5 Flexões"},
+                    {letra:"E", circuito: "Correr parado 20 vezes"},
+                    {letra:"F", circuito: "10 Agachamentos"},
+                    {letra:"G", circuito: "10 Polichinelos"},
+                    {letra:"H", circuito: "10 Pulos altos "},
+                    {letra:"I", circuito: "5 Agachamentos com pulo"},
+                    {letra:"J", circuito: "Pular corda 10 vezes"},
+                    {letra:"K", circuito: "5 Abdominais"},
+                    {letra:"L", circuito: "10 Corrida com obstáculos"},
+                    {letra:"M", circuito: "5 Flexões"},
+                    {letra:"N", circuito: "Correr parado 20 vezes"},
+                    {letra:"O", circuito: "10 Agachamentos"},
+                    {letra:"P", circuito: "10 Polichinelos"},
+                    {letra:"Q", circuito: "10 Pulos altos "},
+                    {letra:"R", circuito: "5 Agachamentos com pulo"},
+                    {letra:"S", circuito: "Pular corda 10 vezes"},
+                    {letra:"T", circuito: "Pular corda 10 vezes"},
+                    {letra:"U", circuito: "5 Abdominais"},
+                    {letra:"V", circuito: "10 Corrida com obstáculos"},
+                    {letra:"W", circuito: "5 Flexões"},
+                    {letra:"X", circuito: "10 Polichinelos "},
+                    {letra:"Y", circuito: "Pular corda 10 vezes"},
+                    {letra:"Z", circuito: "5 Abdominais"},             
+                    {letra:" ", circuito: ""}  
+                    ];
+                    resultado.innerHTML = "<h2><u> Circuito </u></h1>";
+                    var letra = "";
+                    for (var i = 0; i<= palavraDigitada.length; i++){
+                        letra = palavraDigitada[i].toLocaleUpperCase();
+                        for (var j = 0; j<= palavras.length; j++){
+                            if (palavras[j].letra == letra){
+                                resultado.innerHTML += "<div> <b style='font-size: 160%;'>"+ palavras[j].letra + "</b>&nbsp;" +  palavras[j].circuito +"</div>";
+                                break;
+                            }
+                        }
+
+                    }
+                }
+
+            }   
+        </script>
+
+        <style>
+
+            /* Add some margins for each label */
+            .form-inline label {
+            margin: 5px 10px 5px 0;
+            }
+
+            .form-inline{
+                width: 550px;
+                margin: auto;
+                margin-top: 20px;
+            }
+
+            /* Style the input fields */
+            .form-inline input {
+            vertical-align: middle;
+            margin: 5px 10px 5px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            width: 315px;
+            }
+
+            /* Style the submit button */
+            .form-inline button {
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            border: 1px solid #ddd;
+            color: white;
+            }
+
+            .form-inline button:hover {
+            background-color: royalblue;
+            }
+
+            /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+            @media (max-width: 800px) {
+            .form-inline input {
+                margin: 10px 0;
+            }
+
+            }        
+
+
+            /* basics */
+            body {
+            background: #f8f7f2;
+            padding: 0 10%;
+            font: 100%/1.5 'Kalam', cursive;
+            }
+
+            #resultado{
+                font-size: 17px;
+                line-height: 1;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="form-inline">        
+            <div>
+                <label for="email">Palavra:</label>
+                <input type="text" id="palavra" name="palavra" placeholder="Informe a palavra que deseja montar seu crcuito" />
+                <button onclick="javascript:gerar(document.getElementById('palavra').value, document.getElementById('resultado'))">Gerar circuito</button>
+            </div>
+            <div>
+                <div id="resultado"></div>
+            </div>
+        </div>          
+    </body>
+</html>
